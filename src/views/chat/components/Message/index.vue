@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 /* eslint-disable*/
-import { computed, ref } from 'vue'
+import { computed, ref,watch } from 'vue'
 import { NDropdown, useMessage } from 'naive-ui'
 import AvatarComponent from './Avatar.vue'
 import TextComponent from './Text.vue'
@@ -12,12 +12,12 @@ import { copyToClip } from '@/utils/copy'
 
 interface Props {
   dateTime?: string
+  nodeText?:string
   text?: string
   inversion?: boolean
   error?: boolean
   loading?: boolean
 	toLogin?: boolean
-
 }
 
 interface Emit {
@@ -65,7 +65,6 @@ const options = computed(() => {
 
   return common
 })
-
 function handleSelect(key: 'copyText' | 'delete' | 'toggleRenderType') {
   switch (key) {
     case 'copyText':
@@ -120,6 +119,7 @@ async function handleCopy() {
           :inversion="inversion"
           :error="error"
           :text="text"
+          :nodeText="nodeText"
           :loading="loading"
           :as-raw-text="asRawText"
 

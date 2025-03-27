@@ -2,6 +2,16 @@ declare namespace Chat {
 
 	interface Chat {
 		dateTime: string
+		nodeText:string
+		text: string
+		inversion?: boolean
+		error?: boolean
+		loading?: boolean
+		conversationOptions?: ConversationRequest | null
+		requestOptions: { prompt: string; options?: ConversationRequest | null }
+	}
+	interface ChatOne {
+		dateTime: string
 		text: string
 		inversion?: boolean
 		error?: boolean

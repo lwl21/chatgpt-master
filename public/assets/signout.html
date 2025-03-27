@@ -1,0 +1,28 @@
+<html>
+
+<head></head>
+
+<body>
+    <script src="./oidc-client.min.js"></script>
+    <script>
+        var settings = {
+            authority: 'https://passport.shixianjia.com',
+            client_id: 'House_App',
+            redirect_uri: location.origin + '/assets/signin-callback.html',
+            post_logout_redirect_uri: location.origin + '/assets/signout-callback.html',
+            response_type: 'id_token token',
+            scope: 'openid email house',
+            filterProtocolClaims: true,
+            loadUserInfo: true
+        };
+        var client = new Oidc.OidcClient(settings);
+				let query=new URLSearchParams(location.search);
+				let returnUrl=query.get("returnUrl") || "/";
+        var token = JSON.parse(localStorage.getItem('token') || '{}');
+        client.createSignoutRequest({ id_token_hint: token.id_token, state: { returnUrl: returnUrl } }).then(function (req) {
+					window.location.assign(req.url);
+        });
+    </script>
+</body>
+
+</html>

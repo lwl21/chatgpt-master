@@ -1,0 +1,33 @@
+<html>
+
+<head></head>
+
+<body>
+    <script src="./oidc-client.min.js"></script>
+    <script>
+        new Oidc.OidcClient().processSigninResponse().then(function (response) {
+            console.log("signin response success", response);
+
+            var access_token = response.access_token;
+            var id_token = response.id_token;
+            var token_type = response.token_type;
+
+            localStorage.setItem('token', JSON.stringify({
+                access_token: access_token,
+                id_token: id_token,
+                token_type: token_type
+            }));
+            if (localStorage.token) {
+                var returnUrl = (response.state && response.state.returnUrl) || '/';
+                location.href = returnUrl;
+            }
+
+        }).catch(function (err) {
+            location.href = '/';
+        });
+
+
+    </script>
+</body>
+
+</html>

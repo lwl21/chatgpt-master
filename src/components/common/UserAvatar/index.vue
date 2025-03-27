@@ -41,9 +41,9 @@ if(localStorage.getItem("token")) ms.success("登录成功")
       <h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap" v-if="userInfo">
                 {{ userInfo.nickName}}
       </h2>
-			<h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap cursor-pointer" @click="handleLogin" v-if="!userInfo">
+			<!-- <h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap cursor-pointer" @click="handleLogin" v-if="!userInfo">
 				登录
-			</h2>
+			</h2> -->
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <!--        <span
           v-if="isString(userInfo.description) && userInfo.description !== ''"

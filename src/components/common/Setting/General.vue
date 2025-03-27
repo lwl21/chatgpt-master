@@ -236,7 +236,7 @@ onMounted(()=>{
           />
         </div>
       </div>
-			<div class="flex items-center space-x-4">
+			<!-- <div class="flex items-center space-x-4">
 				<span class="flex-shrink-0 w-[100px]">登录设置</span>
 				<div class="flex flex-wrap items-center gap-4">
 					<n-popconfirm
@@ -250,7 +250,7 @@ onMounted(()=>{
 					</n-popconfirm>
 					<NButton size="small" type="success" v-if="!userInfo" @click="handleLogin('登录')">登录</NButton>
 				</div>
-			</div>
+			</div> -->
 <!--      <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.resetUserInfo') }}</span>
         <NButton size="small" @click="handleReset">

@@ -4,8 +4,8 @@
 
 更多功能：[chatgpt-web-plus](https://github.com/Chanzhaoyu/chatgpt-web-plus)
 
-![cover](./docs/c1.png)
-![cover2](./docs/c2.png)
+![cover](./docs/c2.png)
+![cover2](./docs/c1.png)
 
 - [ChatGPT Web](#chatgpt-web)
 	- [介绍](#介绍)
@@ -33,9 +33,7 @@
 			- [后端服务](#后端服务-1)
 			- [前端网页](#前端网页-1)
 	- [常见问题](#常见问题)
-	- [参与贡献](#参与贡献)
 	- [赞助](#赞助)
-	- [License](#license)
 ## 介绍
 
 支持双模型，提供了两种非官方 `ChatGPT API` 方法
@@ -53,7 +51,7 @@
 1. 你应该首先使用 `API` 方式
 2. 使用 `API` 时，如果网络不通，那是国内被墙了，你需要自建代理，绝对不要使用别人的公开代理，那是危险的。
 3. 使用 `accessToken` 方式时反向代理将向第三方暴露您的访问令牌，这样做应该不会产生任何不良影响，但在使用这种方法之前请考虑风险。
-4. 使用 `accessToken` 时，不管你是国内还是国外的机器，都会使用代理。默认代理为 [pengzhile](https://github.com/pengzhile) 大佬的 `https://ai.fakeopen.com/api/conversation`，这不是后门也不是监听，除非你有能力自己翻过 `CF` 验证，用前请知悉。[社区代理](https://github.com/transitive-bullshit/chatgpt-api#reverse-proxy)（注意：只有这两个是推荐，其他第三方来源，请自行甄别）
+4. 使用 `accessToken` 时，不管你是国内还是国外的机器，都会使用代理。除非你有能力自己翻过 `CF` 验证，用前请知悉。[社区代理](https://github.com/transitive-bullshit/chatgpt-api#reverse-proxy)（注意：只有这两个是推荐，其他第三方来源，请自行甄别）
 5. 把项目发布到公共网络时，你应该设置 `AUTH_SECRET_KEY` 变量添加你的密码访问权限，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
 
 切换方式：
@@ -198,10 +196,6 @@ docker run --name chatgpt-web -d -p 127.0.0.1:3002:3002 --env OPENAI_API_KEY=you
 http://localhost:3002/
 ```
 
-#### Docker compose
-
-[Hub 地址](https://hub.docker.com/repository/docker/chenzhaoyu94/chatgpt-web/general)
-
 ```yml
 version: '3'
 
@@ -341,6 +335,3 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
 		<p>支付宝</p>
 	</div>
 </div>
-
-## License
-MIT © [ChenZhaoYu](./license)
